@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 class TryCatchPratik {
     public static void main(String[] args) {
 
