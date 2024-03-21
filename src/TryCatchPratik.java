@@ -15,7 +15,5 @@ class TryCatchPratik {
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Hata! Dizin dışı bir indeks girildi. " + e.getMessage());
         }
-
     }
-
 }
