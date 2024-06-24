@@ -1,0 +1,55 @@
+package DosyadanSayilariOkumaVeToplama;
+import java.io.*;
+
+public class DosyadanSayilariOkumaVeToplama {
+
+    public static void main(String[] args) {
+        String dosyaAdi = "metinDosyasi.txt";
+        try {
+
+            FileWriter fileWriter = new FileWriter(dosyaAdi);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+            bufferedWriter.write("2\n");
+            bufferedWriter.write("20\n");
+            bufferedWriter.write("200\n");
+            bufferedWriter.write("2000\n");
+            bufferedWriter.write("20000\n");
+
+            bufferedWriter.close();
+            fileWriter.close();
+
+            System.out.println("Dosya başarıyla oluşturuldu ve veriler yazıldı.");
+
+
+            int toplam = toplamiHesapla(dosyaAdi);
+            System.out.println("Dosyadaki sayıların toplamı: " + toplam);
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Dosya oluşturulurken bir hata oluştu: " + e.getMessage());
+        }
+    }
+
+    private static int toplamiHesapla(String dosyaAdi) throws IOException {
+
+        FileReader fileReader = new FileReader(dosyaAdi);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+        int toplam = 0;
+        String satir;
+
+
+        while ((satir = bufferedReader.readLine()) != null) {
+
+            toplam += Integer.parseInt(satir.trim());
+        }
+
+        bufferedReader.close();
+        fileReader.close();
+
+        return toplam;
+    }
+}
