@@ -10,11 +10,11 @@ public class DosyadanSayilariOkumaVeToplama {
             FileWriter fileWriter = new FileWriter(dosyaAdi);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
-            bufferedWriter.write("2\n");
+            bufferedWriter.write("5\n");
+            bufferedWriter.write("10\n");
             bufferedWriter.write("20\n");
-            bufferedWriter.write("200\n");
-            bufferedWriter.write("2000\n");
-            bufferedWriter.write("20000\n");
+            bufferedWriter.write("12\n");
+            bufferedWriter.write("33\n");
 
             bufferedWriter.close();
             fileWriter.close();
